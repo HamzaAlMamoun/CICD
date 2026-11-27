@@ -9,6 +9,11 @@ jobs:
   test:
     # praktisch standaard
     runs-on: ubuntu-latest
+    #Toegeoevgd in oef 5
+    strategy:
+      matrix:
+        node: [22, 24, 26]
+    #TOT HIER
     defaults:
       run:
         working-directory: 019/acme-todo
@@ -19,6 +24,6 @@ jobs:
       - name: NodeInstall
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: ${{matrix.node}}
       - name: Testuitvoeren
         run: npm test
