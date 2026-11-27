@@ -9,12 +9,16 @@ jobs:
   test:
     # praktisch standaard
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 019/acme-todo
     steps:
       - name: CodeOphalen
         uses: actions/checkout@v7
 
       - name: NodeInstall
         uses: actions/setup-node@v7
+        working-dir: 019/acme-todo
         with:
           node-version: 24
       - name: Testuitvoeren
