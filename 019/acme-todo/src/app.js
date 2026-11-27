@@ -32,8 +32,9 @@ function createApp(store) {
     if (req.method === 'GET') {
       return send(res, 200, store.list());
     }
-    //AANPASSING IS HIER VAN PULL NAAR PUSH
-    if (req.method === 'PUSH') {
+    //AANPASSING IS HIER VAN POST NAAR PUSH => terug vreandet in oefening 4
+
+    if (req.method === 'POST') {
       try {
         return send(res, 201, store.add(await readJson(req)));
       } catch {
