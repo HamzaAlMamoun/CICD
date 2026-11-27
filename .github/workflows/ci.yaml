@@ -18,7 +18,6 @@ jobs:
 
       - name: NodeInstall
         uses: actions/setup-node@v7
-        working-dir: 019/acme-todo
         with:
           node-version: 24
       - name: Testuitvoeren
