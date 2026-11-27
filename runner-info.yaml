@@ -1,0 +1,14 @@
+name:info
+on: push
+  jobs:
+    info:
+      runs-on: hostname
+     steps:
+      - name: hostname
+        run: hostname
+      - name
+        run: whoami
+      - name: os
+        run: uname -a
+      - name: inhoud van de werkmap
+        run: ls -la
